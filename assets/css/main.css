@@ -242,11 +242,14 @@ section {
 --------------------------------------------------------------*/
 .header {
   z-index: 997;
-  position: absolute;
+  position: relative;
   padding: 25px 0;
-    top: 0;
+  height: 80px;
+  top: 0;
   left: 0;
   right: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0));
+  background-size: cover;
 }
 
 
@@ -262,6 +265,7 @@ section {
   margin-bottom: 0;
   font-family: var(--font-primary);
 }
+
 
 .header .logo h1 span {
   color: var(--color-primary);
@@ -1005,6 +1009,7 @@ section {
 /*--------------------------------------------------------------
 # Alt Services Section
 --------------------------------------------------------------*/
+
 .alt-services .img-bg {
   background-size: cover;
   background-position: center center;
@@ -1080,14 +1085,15 @@ section {
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about{
+  margin-top: 300px;
+}
 .about h2 {
   font-size: 48px;
   font-weight: 700;
   font-family: var(--font-secondary);
   margin: 30px 0;
 }
-
-
 
 @media (min-width: 991px) {
   .about h2 {
@@ -1314,6 +1320,10 @@ section {
 --------------------------------------------------------------*/
 .project-details .portfolio-details-slider img {
   width: 100%;
+}
+
+.project-details .filter-commercial-parent:hover .subcategories {
+  display: block;
 }
 
 .project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
@@ -1611,8 +1621,20 @@ section {
 
 .contact .contact-text h2 {
   font-size: 30px;
-  color: #6c757d; 
+  color: var(--color-secondary);
   font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.contact .contact-text h2:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: red;
+  margin: 20px auto 0;
 }
 
 .contact .contact-text p {
@@ -1701,16 +1723,18 @@ section {
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  overflow-x: hidden;
-  padding: 0;
+  padding-bottom: 0; /* Reduced padding */
+  padding-top:10;
+  /*background-color: rgba(38,38,38, 0.5);*/
 }
 
 .hero .carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  min-height: 100vh;
-  padding: 80px 0;
-  margin: 0;
-  position: relative;
+  min-height: 60vh;
+  /*  z-index: 1; */
 }
 
 .hero .carousel-item {
@@ -1723,10 +1747,38 @@ section {
   z-index: 1;
   transition-duration: 0.4s;
 }
+.hero .carousel-caption {
+  color: white;
+  text-align: left;
+  background-color: rgba(0,0,0,.3);
+  font-family: var(--font-primary);
+  font-size: 50px; /* Adjusted font size */
+  top: 0;
+  left: 0;
+  position: absolute;
+  height:100%;
+  width: 100%; /* Set width to half the page */
+}
+
+.hero .carousel-caption h5 {
+  color: white;
+  text-align: center; /* Center the text */
+  background-color:rgba(222, 28, 36, .5);
+  font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+}
+
 
 .hero .carousel-item::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   position: absolute;
   inset: 0;
 }
@@ -1969,5 +2021,145 @@ section {
   /* Optional: Adjust logo max-width on smaller screens */
   .footer .footer-content .col-lg-3 img {
     max-width: 150px; /* Reduce the size of the logo on smaller screens */
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* Base modal styling */
+.modal .modal-dialog {
+  max-width: 90%; /* Ensure the modal takes up most of the screen width on small devices */
+  margin: 0 auto; /* Center the modal */
+  height: 100%; /* Allow the modal to take up the full height */
+  padding: 0; /* Remove unnecessary padding */
+}
+
+.modal .modal-content {
+  border-radius: 0; /* Remove border radius to make it square/rectangular */
+  height: 100%; /* Allow the content to fill the modal */
+  border: none; /* Remove borders for a cleaner look */
+  padding: 0; /* Remove padding to allow image to take up space */
+}
+
+/* Modal Header */
+.modal .modal-header {
+  background-color: transparent; /* Remove background color for a cleaner header */
+  color: transparent; /* Make the header content transparent */
+  border: none; /* Remove any border */
+  padding: 0; /* Remove any extra padding */
+  position: absolute; /* Position header content outside */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2; /* Ensure header stays on top of content */
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000; /* Set color to black */
+  background-color: #000;
+  border: none; /* No border */
+  font-size: 2rem; /* Size of the "X" */
+  font-weight: bold;
+  z-index: 3; /* Make sure close button is on top */
+  transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+  color: #333; /* Slightly darken the black color on hover */
+}
+
+.modal .close:focus {
+  outline: none;
+}
+
+/* Modal Body */
+.modal .modal-body {
+  background-color: transparent;
+  text-align: center;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .img-fluid {
+  max-width: 100%;
+  height: auto;
+  max-height: 90vh; /* Set max-height to 90% of the viewport height to ensure full visibility */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; /* Center the image inside the modal */
+}
+
+/* Invisible navigation buttons */
+.modal .invisible-btn {
+  background-color: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.modal .invisible-btn:hover {
+  opacity: 1;
+}
+
+.modal .left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.modal .right {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* Buttons */
+.modal .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.modal .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+@media (max-width: 576px) {
+  /* Make the modal full-screen on mobile */
+  .modal .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+    height: 100%;
+  }
+
+  /* Full-width image */
+  .modal .img-fluid {
+    max-width: 100%;
+    max-height: 90vh; /* Ensure the image doesn't overflow on mobile */
+    object-fit: contain;
+  }
+
+  /* Adjust close button size */
+  .modal .close {
+    font-size: 2rem;
+  }
+
+  /* Invisible buttons for navigation */
+  .modal .left, .modal .right {
+    font-size: 2.5rem;
+    padding: 10px;
   }
 }
