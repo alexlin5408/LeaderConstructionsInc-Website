@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open about.html",
-            "file": "/Users/yoozu/Documents/Projects/LeaderConstructionInc/LCI-Website/LeaderConstructionsInc-Website/about.html"
+            "file": "/Users/yoozu/Documents/Projects/LeaderConstructionInc/LCI-Website/LeaderConstructionsInc-Website/index.html"
         }
     ]
 }
