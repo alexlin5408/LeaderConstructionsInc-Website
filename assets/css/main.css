@@ -1082,6 +1082,16 @@ section {
   margin-bottom: 0;
 }
 
+.alt-services .custom-carousel-inner {
+  height: 300px; /* Set a fixed height for the carousel */
+}
+
+.alt-services .custom-carousel-image {
+  height: 100%;
+  object-fit: cover; /* Ensure the images cover the entire area without changing their aspect ratio */
+}
+
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -2244,6 +2254,6 @@ section {
 
 @media (max-width: 768px) {
   .choose-services .container .carousel .carousel-inner {
-    min-height: 400px;
+    min-height: 500px;
   }
 }
