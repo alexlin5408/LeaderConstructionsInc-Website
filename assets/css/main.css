@@ -2254,6 +2254,6 @@ section {
 
 @media (max-width: 768px) {
   .choose-services .container .carousel .carousel-inner {
-    min-height: 500px;
+    min-height: 600px;
   }
 }
