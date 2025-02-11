@@ -1838,6 +1838,21 @@ section {
   font-size: 18px;
 }
 
+.hero .carousel-caption h5 {
+  color: white;
+  text-align: center; /* Center the text */
+  background-color:rgba(222, 28, 36, .5);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  text-transform: uppercase;
+}
+
 .hero .info .btn-get-started {
   font-family: var(--font-primary);
   font-weight: 500;
@@ -2177,6 +2192,14 @@ section {
 # choose Services Section
 --------------------------------------------------------------*/
 
+.choose-services {
+  background-color: #f8f9fa; /* Optional: Set a background color */
+}
+
+.choose-services .container {
+  margin: 0 auto; /* Center the container */
+}
+
 .choose-services .img-bg {
   background-size: cover;
   background-position: center center;
@@ -2190,17 +2213,6 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-}
-
-.choose-services h3:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--color-primary);
-  left: 0;
-  bottom: 0;
 }
 
 .choose-services .icon-box {
@@ -2223,10 +2235,6 @@ section {
   transition: 0.3s;
 }
 
-.choose-services .icon-box:hover i {
-  background-color: var(--color-primary);
-  color: #fff;
-}
 
 .choose-services .icon-box h4 {
   font-weight: 700;
@@ -2239,9 +2247,6 @@ section {
   transition: 0.3s;
 }
 
-.choose-services .icon-box h4 a:hover {
-  color: var(--color-primary);
-}
 
 .choose-services .icon-box p {
   line-height: 24px;
@@ -2249,7 +2254,7 @@ section {
   margin-bottom: 0;
 }
 .choose-services .container .carousel .carousel-inner {
-  min-height: 200px;
+  min-height: 300px;
 }
 
 @media (max-width: 768px) {
