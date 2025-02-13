@@ -845,6 +845,12 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+  .about .about-img {
+    min-height: 300px; /* Reduce the height for mobile devices */
+  }
+}
+
 /*--------------------------------------------------------------
 # Projet Details Section
 --------------------------------------------------------------*/
