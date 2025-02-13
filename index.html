@@ -261,7 +261,8 @@
         <a href="#projects" onclick="document.querySelector('[data-filter=\'.filter-commercial\']').click()" style="text-decoration: none; color: inherit;">
         <span style="font-size: 1.25rem; font-weight: bold; text-decoration: underline;">Commercial Construction</span>
         <div class="d-flex justify-content-left">
-          <button class="btn btn-primary" style="font-size: 0.875rem;">Visualize our Work</button>
+          <span style="font-size: .875rem; text-decoration: underline;">Click to see our Work</span>
+
         </div>
         <p style="font-size: 0.875rem;">We uphold the highest standards of integrity in all of our actions.</p>
         </a>
@@ -270,7 +271,7 @@
         <a href="#projects" onclick="document.querySelector('[data-filter=\'.filter-residential\']').click()" style="text-decoration: none; color: inherit;">
         <span style="font-size: 1.25rem; font-weight: bold; text-decoration: underline;">Residential Construction</span>
         <div class="d-flex justify-content-left">
-          <button class="btn btn-primary" style="font-size: 0.875rem;">Visualize our Work</button>
+          <span style="font-size: .875rem; text-decoration: underline;">Click to see our Work</span>
         </div>
         <p style="font-size: 0.875rem;">We value our people, encourage their development, and reward their performance.</p>
         </a>
@@ -279,7 +280,7 @@
         <a href="#contact" style="text-decoration: none; color: inherit;">
         <span style="font-size: 1.25rem; font-weight: bold; text-decoration: underline;">Equipment</span>
         <div class="d-flex justify-content-left">
-          <button class="btn btn-primary" style="font-size: 0.875rem;">Contact Us</button>
+          <span style="font-size: .875rem; text-decoration: underline;">Contact Us</span>
         </div>
         <p style="font-size: 0.875rem;">We offer a wide range of resources on kitchen equipment and furniture to meet your needs. Feel free to <b>CONTACT US</b> for any inquiries.</p>
         </a>
@@ -385,6 +386,18 @@
                 <div class="portfolio-name">Ice Cream Shop</div>
               </div>
             </div><!-- End Projects Item -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-commercial">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-info">
+                  <a href="#" class="open-modal" data-toggle="modal" data-target="#imageModal" data-category="hibachi" data-index="0">
+                    <img src="assets/img/projects/Hibachi/hib-1.jpg" class="img-fluid" alt="" loading="lazy">
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-subheading">
+                <div class="portfolio-name">Hibachi Resturant</div>
+              </div>
+            </div><!-- End Projects Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-commercial">
               <div class="portfolio-content h-100">
@@ -396,6 +409,19 @@
               </div>
               <div class="portfolio-subheading">
                 <div class="portfolio-name">Sushi Resturant</div>
+              </div>
+            </div><!-- End Projects Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-commercial">
+              <div class="portfolio-content h-100">
+                <div class="portfolio-info">
+                  <a href="#" class="open-modal" data-toggle="modal" data-target="#imageModal" data-category="buf-resturant" data-index="0">
+                    <img src="assets/img/projects/buf-img/buf-14.jpg" class="img-fluid" alt="" loading="lazy">
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-subheading">
+                <div class="portfolio-name">Buffet Resturant</div>
               </div>
             </div><!-- End Projects Item -->
 
@@ -633,8 +659,8 @@
       <div class="modal-body text-center" style="padding: 2rem;">
         <div class="image-container" style="position: relative;">
           <img id="modalImage" src="" alt="Modal Image" class="img-fluid rounded shadow-lg" style="max-height: 600px; max-width: 100%; object-fit: contain;">
-          <button id="prevBtn" class="btn invisible-btn left" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">&#8592;</button>
-          <button id="nextBtn" class="btn invisible-btn right" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">&#8594;</button>
+          <button id="prevBtn" class="btn invisible-btn icon-circle left" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">&#8592;</button>
+          <button id="nextBtn" class="btn invisible-btn icon-circle right" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">&#8594;</button>
         </div>
       </div>
     </div>
@@ -684,6 +710,11 @@
       "assets/img/projects/Sushi/sushi-4.png",
       "assets/img/projects/Sushi/sushi-5.png",
     ],
+    "hibachi": [
+      "assets/img/projects/Hibachi/hib-1.jpg",
+      "assets/img/projects/Hibachi/hib-2.jpg",
+      "assets/img/projects/Hibachi/hib-3.jpg",
+    ],
       "cafe": [
         "assets/img/projects/Cafe/cafe-1.png",
         "assets/img/projects/Cafe/cafe-2.png",
@@ -691,6 +722,41 @@
         "assets/img/projects/Cafe/cafe-4.jpg",
         "assets/img/projects/Cafe/cafe-5.jpg",
         "assets/img/projects/Cafe/cafe-6.jpg",
+    ],
+    "buf-resturant": [
+      "assets/img/projects/buf-img/buf-1.jpg",
+      "assets/img/projects/buf-img/buf-2.jpg",
+      "assets/img/projects/buf-img/buf-3.jpg",
+      "assets/img/projects/buf-img/buf-4.jpg",
+      "assets/img/projects/buf-img/buf-5.jpg",
+      "assets/img/projects/buf-img/buf-6.jpg",
+      "assets/img/projects/buf-img/buf-7.jpg",
+      "assets/img/projects/buf-img/buf-8.jpg",
+      "assets/img/projects/buf-img/buf-9.jpg",
+      "assets/img/projects/buf-img/buf-10.jpg",
+      "assets/img/projects/buf-img/buf-11.jpg",
+      "assets/img/projects/buf-img/buf-12.jpg",
+      "assets/img/projects/buf-img/buf-13.jpg",
+      "assets/img/projects/buf-img/buf-14.jpg",
+      "assets/img/projects/buf-img/buf-15.jpg",
+      "assets/img/projects/buf-img/buf-16.jpg",
+      "assets/img/projects/buf-img/buf-17.jpg",
+      "assets/img/projects/buf-img/buf-18.jpg",
+      "assets/img/projects/buf-img/buf-19.jpg",
+      "assets/img/projects/buf-img/buf-20.jpg",
+      "assets/img/projects/buf-img/buf-21.jpg",
+      "assets/img/projects/buf-img/buf-22.jpg",
+      "assets/img/projects/buf-img/buf-23.jpg",
+      "assets/img/projects/buf-img/buf-24.jpg",
+      "assets/img/projects/buf-img/buf-25.jpg",
+      "assets/img/projects/buf-img/buf-26.jpg",
+      "assets/img/projects/buf-img/buf-27.jpg",
+      "assets/img/projects/buf-img/buf-28.jpg",
+      "assets/img/projects/buf-img/buf-29.jpg",
+      "assets/img/projects/buf-img/buf-30.jpg",
+      "assets/img/projects/buf-img/buf-31.jpg",
+      "assets/img/projects/buf-img/buf-32.jpg",
+      "assets/img/projects/buf-img/buf-33.jpg"
     ]
     };
 
