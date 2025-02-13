@@ -589,18 +589,23 @@ section {
 .projects .portfolio-flters li {
   cursor: pointer;
   display: inline-block;
-  padding: 0;
+  padding: 10px 20px;
   font-size: 18px;
   font-weight: 500;
   margin: 0 10px;
   line-height: 1;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  background-color: #fff;
+  color: var(--color-primary);
 }
 
 .projects .portfolio-flters li:hover,
 .projects .portfolio-flters li.filter-active {
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #fff;
 }
 
 .projects .portfolio-flters li:first-child {
@@ -614,7 +619,6 @@ section {
 .portfolio-flters input[type="checkbox"] {
   display: none;
 }
-
 
 @media (max-width: 575px) {
   .projects .portfolio-flters li {
@@ -743,6 +747,108 @@ section {
 }
 
 .alt-services .custom-carousel-image {
+  height: 100%;
+  object-fit: cover; /* Ensure the images cover the entire area without changing their aspect ratio */
+}
+
+
+/*--------------------------------------------------------------
+# Alt Services 10 Section
+--------------------------------------------------------------*/
+
+.alt-services-10 {
+  padding: 20px;
+
+}
+
+.alt-services-10 .img-bg {
+  background-size: cover;
+  background-position: center center;
+  min-height: 400px;
+}
+
+.alt-services-10 h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.alt-services-10 h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-primary);
+  left: 0;
+  bottom: 0;
+}
+
+.alt-services-10 .icon-box {
+  margin-top: 50px;
+}
+
+.alt-services-10 .icon-box i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-right: 25px;
+  font-size: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  line-height: 0;
+  box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.alt-services-10 .icon-box:hover i {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.alt-services-10 .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.alt-services-10 .icon-box h4 a {
+  color: #000;
+  transition: 0.3s;
+}
+
+.alt-services-10 .icon-box h4 a:hover {
+  color: var(--color-primary);
+}
+
+.alt-services-10 .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.alt-services-10 .icon-circle,
+.alt-services-10 .icon-circle {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1); /* Light background */
+}
+
+.alt-services-10 .custom-carousel-inner {
+  height: 300px; /* Set a fixed height for the carousel */
+}
+
+.alt-services-10 .custom-carousel-image {
   height: 100%;
   object-fit: cover; /* Ensure the images cover the entire area without changing their aspect ratio */
 }
