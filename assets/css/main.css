@@ -1693,6 +1693,7 @@ section {
 
 .choose-services {
   background-color: #f8f9fa; /* Optional: Set a background color */
+  padding-bottom: 10px;
 }
 
 .choose-services .container {
@@ -1765,11 +1766,11 @@ section {
 }
 
 .choose-services .container .carousel .carousel-inner {
-  min-height: 300px;
+  min-height: 200px;
 }
 
 @media (max-width: 768px) {
   .choose-services .container .carousel .carousel-inner {
-    min-height: 600px;
+    min-height: 500px;
   }
 }
