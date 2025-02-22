@@ -1488,7 +1488,7 @@ section {
 }
 
 .modal .modal-content {
-  background-color: transparent;
+  background-color: white;
   border-radius: 0; /* Remove border radius to make it square/rectangular */
   height: 100%; /* Allow the content to fill the modal */
   border: none; /* Remove borders for a cleaner look */
@@ -1561,7 +1561,7 @@ section {
 /* Invisible navigation buttons */
 .modal .invisible-btn {
   border: none;
-  color: rgba(255,255,255);
+  color: rgba(0,0,0);
   font-size: 2rem;
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -1640,7 +1640,7 @@ section {
   }
   .modal .invisible-btn {
     border: none;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255);
     font-size: 2rem;
     cursor: pointer;
     transition: opacity 0.3s ease;
