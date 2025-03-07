@@ -582,6 +582,31 @@
   document.getElementById("rightClickArea").addEventListener("click", function() {
     document.getElementById("nextBtn").click();
   });
+  var startX = 0;
+  var endX = 0;
+
+  // Detect touch start
+  document.getElementById("modalImage").addEventListener("touchstart", function (event) {
+      startX = event.touches[0].clientX;
+  });
+
+  // Detect touch move
+  document.getElementById("modalImage").addEventListener("touchmove", function (event) {
+      endX = event.touches[0].clientX;
+  });
+
+  // Detect touch end and determine swipe direction
+  document.getElementById("modalImage").addEventListener("touchend", function () {
+      var threshold = 50; // Minimum swipe distance to trigger navigation
+      if (startX - endX > threshold) {
+          // Swiped left (next image)
+          document.getElementById("nextBtn").click();
+      } else if (endX - startX > threshold) {
+          // Swiped right (previous image)
+          document.getElementById("prevBtn").click();
+      }
+  });
+  
 </script>
 
   <!-- Bootstrap JS and dependencies -->
@@ -709,32 +734,6 @@
     currentIndex = (currentIndex < imageCategories[currentCategory].length - 1) ? currentIndex + 1 : 0;
     $('#modalImage').attr('src', imageCategories[currentCategory][currentIndex]);
   });
-
-  var startX = 0;
-  var endX = 0;
-
-  // Detect touch start
-  document.getElementById("modalImage").addEventListener("touchstart", function (event) {
-      startX = event.touches[0].clientX;
-  });
-
-  // Detect touch move
-  document.getElementById("modalImage").addEventListener("touchmove", function (event) {
-      endX = event.touches[0].clientX;
-  });
-
-  // Detect touch end and determine swipe direction
-  document.getElementById("modalImage").addEventListener("touchend", function () {
-      var threshold = 50; // Minimum swipe distance to trigger navigation
-      if (startX - endX > threshold) {
-          // Swiped left (next image)
-          document.getElementById("nextBtn").click();
-      } else if (endX - startX > threshold) {
-          // Swiped right (previous image)
-          document.getElementById("prevBtn").click();
-      }
-  });
-
   </script>
 
 </body>
