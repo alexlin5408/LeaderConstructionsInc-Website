@@ -583,6 +583,38 @@
   document.getElementById("rightClickArea").addEventListener("click", function() {
     document.getElementById("nextBtn").click();
   });
+
+  // Add touch event listeners for mobile devices
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  document.getElementById("modalImage").addEventListener("touchstart", function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+  });
+
+  document.getElementById("modalImage").addEventListener("touchend", function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    if (touchEndX < touchStartX) {
+      document.getElementById("nextBtn").click();
+    }
+    if (touchEndX > touchStartX) {
+      document.getElementById("prevBtn").click();
+    }
+  }
+</script>
+
+<script>
+  document.getElementById("leftClickArea").addEventListener("click", function() {
+    document.getElementById("prevBtn").click();
+  });
+
+  document.getElementById("rightClickArea").addEventListener("click", function() {
+    document.getElementById("nextBtn").click();
+  });
 </script>
 
   <!-- Bootstrap JS and dependencies -->
