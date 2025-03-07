@@ -548,7 +548,7 @@
   <script src="assets/js/main.js"></script>
 
   <!-- Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel">
   <div class="modal-dialog custom-modal-size" role="document" style="max-width: 100%; margin: auto;">
     <div class="modal-content"> 
       <div class="modal-header" style="background-color: #343a40;">
@@ -582,30 +582,7 @@
   document.getElementById("rightClickArea").addEventListener("click", function() {
     document.getElementById("nextBtn").click();
   });
-  var startX = 0;
-  var endX = 0;
 
-  // Detect touch start
-  document.getElementById("modalImage").addEventListener("touchstart", function (event) {
-      startX = event.touches[0].clientX;
-  });
-
-  // Detect touch move
-  document.getElementById("modalImage").addEventListener("touchmove", function (event) {
-      endX = event.touches[0].clientX;
-  });
-
-  // Detect touch end and determine swipe direction
-  document.getElementById("modalImage").addEventListener("touchend", function () {
-      var threshold = 50; // Minimum swipe distance to trigger navigation
-      if (startX - endX > threshold) {
-          // Swiped left (next image)
-          document.getElementById("nextBtn").click();
-      } else if (endX - startX > threshold) {
-          // Swiped right (previous image)
-          document.getElementById("prevBtn").click();
-      }
-  });
   
 </script>
 
@@ -723,17 +700,48 @@
     currentCategory = $(this).data('category');
     currentIndex = $(this).data('index');
     $('#modalImage').attr('src', imageCategories[currentCategory][currentIndex]);
-  });
+    });
 
     $('#prevBtn').click(function() {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : imageCategories[currentCategory].length - 1;
     $('#modalImage').attr('src', imageCategories[currentCategory][currentIndex]);
-  });
+    });
 
-  $('#nextBtn').click(function() {
+    $('#nextBtn').click(function() {
     currentIndex = (currentIndex < imageCategories[currentCategory].length - 1) ? currentIndex + 1 : 0;
     $('#modalImage').attr('src', imageCategories[currentCategory][currentIndex]);
-  });
+    });
+
+    // Variables to track swipe gestures
+    let touchStartX = 0;
+    let touchMoveX = 0;
+
+    // Add event listeners to the modal image container
+    document.getElementById('imageModal').addEventListener('touchstart', function(event) {
+      if (event.touches.length === 1) {
+        touchStartX = event.touches[0].clientX;
+      }
+    }, false);
+
+    document.getElementById('imageModal').addEventListener('touchmove', function(event) {
+      if (event.touches.length === 1) {
+        touchMoveX = event.touches[0].clientX;
+      }
+    }, false);
+
+    document.getElementById('imageModal').addEventListener('touchend', function(event) {
+      if (touchMoveX !== 0) {
+        let diff = touchStartX - touchMoveX;
+        if (diff > 50) {
+          document.getElementById('nextBtn').click();
+        } else if (diff < -50) {
+          document.getElementById('prevBtn').click();
+        }
+        touchStartX = 0;
+        touchMoveX = 0;
+      }
+    }, false);
+
   </script>
 
 </body>
