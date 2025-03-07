@@ -574,39 +574,6 @@
     <button id="nextBtn" class="btn invisible-btn icon-circle right" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 10;">&#8594;</button>   
   </div>
 </div>
-
-<script>
-  document.getElementById("leftClickArea").addEventListener("click", function() {
-    document.getElementById("prevBtn").click();
-  });
-
-  document.getElementById("rightClickArea").addEventListener("click", function() {
-    document.getElementById("nextBtn").click();
-  });
-
-  // Add touch event listeners for mobile devices
-  var touchStartX = 0;
-  var touchEndX = 0;
-
-  document.getElementById("modalImage").addEventListener("touchstart", function(event) {
-    touchStartX = event.changedTouches[0].screenX;
-  });
-
-  document.getElementById("modalImage").addEventListener("touchend", function(event) {
-    touchEndX = event.changedTouches[0].screenX;
-    handleGesture();
-  });
-
-  function handleGesture() {
-    if (touchEndX < touchStartX) {
-      document.getElementById("nextBtn").click();
-    }
-    if (touchEndX > touchStartX) {
-      document.getElementById("prevBtn").click();
-    }
-  }
-</script>
-
 <script>
   document.getElementById("leftClickArea").addEventListener("click", function() {
     document.getElementById("prevBtn").click();
@@ -742,6 +709,32 @@
     currentIndex = (currentIndex < imageCategories[currentCategory].length - 1) ? currentIndex + 1 : 0;
     $('#modalImage').attr('src', imageCategories[currentCategory][currentIndex]);
   });
+
+  var startX = 0;
+  var endX = 0;
+
+  // Detect touch start
+  document.getElementById("modalImage").addEventListener("touchstart", function (event) {
+      startX = event.touches[0].clientX;
+  });
+
+  // Detect touch move
+  document.getElementById("modalImage").addEventListener("touchmove", function (event) {
+      endX = event.touches[0].clientX;
+  });
+
+  // Detect touch end and determine swipe direction
+  document.getElementById("modalImage").addEventListener("touchend", function () {
+      var threshold = 50; // Minimum swipe distance to trigger navigation
+      if (startX - endX > threshold) {
+          // Swiped left (next image)
+          document.getElementById("nextBtn").click();
+      } else if (endX - startX > threshold) {
+          // Swiped right (previous image)
+          document.getElementById("prevBtn").click();
+      }
+  });
+
   </script>
 
 </body>
